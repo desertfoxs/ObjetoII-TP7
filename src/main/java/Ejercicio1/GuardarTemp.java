@@ -9,10 +9,10 @@ import java.nio.file.StandardOpenOption;
 public class GuardarTemp implements Observer{
 
     private String url = "C:/Users/desertfoxs/Desktop/txt Tp7/";
-    private String nombre = "TemperaturaHoy";
+    private String nombre = "TemperaturaHoy.txt";
 
     @Override
-    public void actualizar(String valor) {
+    public void actualizar(String valor){
         try {
             if (Files.notExists(Path.of(url+ nombre))) {
                 Files.writeString(Paths.get(url + nombre), valor + "\n", StandardOpenOption.CREATE);
@@ -20,6 +20,7 @@ public class GuardarTemp implements Observer{
             else{
                 Files.writeString(Paths.get(url + nombre), valor + "\n", StandardOpenOption.APPEND);
             }
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

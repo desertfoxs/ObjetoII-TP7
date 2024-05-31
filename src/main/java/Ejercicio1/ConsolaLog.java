@@ -8,7 +8,6 @@ public class ConsolaLog implements Observer{
         String stringNumber = parts2[0]; // 123
         float number = Integer.parseInt(stringNumber);
 
-
         if(number <= 12){
             System.out.println("Hace frio, se encenderá la caldera");
         }

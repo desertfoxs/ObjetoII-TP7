@@ -1,4 +1,4 @@
-package Ejercicio1;
+package Ejercicio4;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ public abstract class Observable {
 
     protected void notificar(String valor){
         for (Observer observer : observadores){
-            observer.actualizar(valor);
+            observer.notificar(valor);
         }
     }
 }
